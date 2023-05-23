@@ -220,7 +220,7 @@ public class BoardController {
 	
 	/*
 	 * 6. Content Type 매핑
-	 * - 요청의 Content0Type 헤더 값을 매핑 조건으로 지정하는 경우에는 consumes속성을 사용한다.
+	 * - 요청의 ContentType 헤더 값을 매핑 조건으로 지정하는 경우에는 consumes속성을 사용한다.
 	 */
 	
 	// ResponseEntity : 응답 상태코드와 값을 제네릭에 설정되어 있는 타입에 따라서 내 마음대로 내보낼수 있다.
