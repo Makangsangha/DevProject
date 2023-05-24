@@ -47,7 +47,7 @@
 		<input type="submit" value="register03"/><br>
 	</form>
 	
-	<p>6) HRML Form 필드값이 숫자일 경우에는 컨트롤러 매개변수 타입이 문자열이면 그대로 문자열 형태로 들어가는가?</p>
+	<p>6) HTML Form 필드값이 숫자일 경우에는 컨트롤러 매개변수 타입이 문자열이면 그대로 문자열 형태로 들어가는가?</p>
 	<form action="/register04" method="post">
 		userId : <input type="text" name="userId" value="hongkd"/><br>
 		password : <input type="text" name="password" value="1234"/><br>
@@ -151,5 +151,238 @@
 		<input type="submit" value="register"><br>
 	</form>
 	<br><hr>
+	
+	<h4>7. 폼 방식 요청 처리</h4>
+	<hr>
+	<p>1) 폼 텍스트 필드 요소값을 기본 데이터 타입인 문자열 타입 매개변수로 처리한다.</p>
+	<form action="/registerUserId" method="post">
+		userId : <input type ="text" name="userId"><br>
+		<input type="submit" value="registerUserId"><br>
+	</form>
+
+	<p>2) 폼 텍스트 필드 요소값을 자바빈즈 매개변수로 처리한다.</p>
+	<form action="/registerMemberUserId" method="post">
+		userId : <input type ="text" name="userId"><br>
+		<input type="submit" value="registerMemberId"><br>
+	</form><br/>
+	
+	<p>3) 폼 비밀번호 필드 요소값을 자바빈즈 매개변수로 처리한다.</p>
+	<form action="/registerPassword" method="post">
+		password : <input type ="password" name="password"><br>
+		<input type="submit" value="registerPassword"><br>
+	</form>
+	
+	<p>4) 홈 라디오버튼 요소값을 기본 데이터 타입인 문자여 타입 매개변수로 처리한다.</p>
+	<form action="/registerRadio" method="post">
+		gender : <br/> 
+		<input type ="radio" name="gender" value="male" checked="checked">Male <br>
+		<input type ="radio" name="gender" value="female">Female <br>
+		<input type ="radio" name="gender" value="other">Other <br>
+		<input type="submit" value="registerRadio"/><br>	
+	</form> <br>
+	
+	<p>5) 폼 셀렉트 박스 요소값을 기본 데이터 타입인 문자열 매개변수로 처리한다.</p>
+	<form action="/registerSelcet" method="post">
+		nationality : <br>
+		<select name="nationality">
+			<option value="korea">대한민국</option>
+			<option value="germany">독일</option>
+			<option value="austrailia">호주</option>
+			<option value="canada">캐나다</option>
+			<option value="usa">미국</option>
+		</select> <br>
+		<input type="submit" value="registerSelcet">
+	</form><br>
+	
+	<p>6) 복수 선택이 가능한 폼 셀렉트 박스 요소값을 기본 데이터 타입인 문자열 타입 매개변수로 처리한다.</p>
+	<form action="/registerMultiSelect01" method="post">
+		cars : <br>
+		<select name="cars" multiple="multiple">
+			<option value="jeep">JEEP</option>
+			<option value="volvo">VOLVO</option>
+			<option value="bnw">BMW</option>
+			<option value="audi">AUDI</option>
+		</select> <br>
+		<input type="submit" value="registerMultiSelect01"><br>
+	</form><br>
+
+	<p>7) 복수 선택이 가능한 폼 셀렉트 박스 요소값을 문자열  배열 타입 매개변수로 처리한다.</p>
+	<form action="/registerMultiSelect02" method="post">
+		cars : <br>
+		<select name="carArray" multiple="multiple">
+			<option value="jeep">JEEP</option>
+			<option value="volvo">VOLVO</option>
+			<option value="bnw">BMW</option>
+			<option value="audi">AUDI</option>
+		</select> <br>
+		<input type="submit" value="registerMultiSelect02"><br>
+	</form><br>
+	
+	<p>8) 복수 선택이 가능한 폼 셀렉트박스 요소값을 문자열로 요소를 가진 리스트 컬렉션 타입 매개변수로 처리한다.</p>
+	<form action="/registerMultiSelect03" method="post">
+		cars : <br>
+		<select name="carList" multiple="multiple">
+			<option value="jeep">JEEP</option>
+			<option value="volvo">VOLVO</option>
+			<option value="bnw">BMW</option>
+			<option value="audi">AUDI</option>
+		</select> <br>
+		<input type="submit" value="registerMultiSelect03"><br>
+	</form><br>
+	
+	<p>9) 폼 체크박스 요소값을 기본 데이터 타입인 문자열 타입 매개변수로 처리한다.</p>
+	<form action="/registerCheckbox01" method="post">
+		hoddy : <br>
+		<input type="checkbox" name="hobby" value="sports">Sports<br>
+		<input type="checkbox" name="hobby" value="music">Music<br>
+		<input type="checkbox" name="hobby" value="movie">Movie<br>
+		<input type="submit" value="registerCheckbox01"><br>
+	</form><br>
+
+	<p>10) 폼 체크박스 요소값을 문자열 배열 타입 매개변수로 처리한다.</p>
+	<form action="/registerCheckbox02" method="post">
+		hoddy : <br>
+		<input type="checkbox" name="hobbyArray" value="sports">Sports<br>
+		<input type="checkbox" name="hobbyArray" value="music">Music<br>
+		<input type="checkbox" name="hobbyArray" value="movie">Movie<br>
+		<input type="submit" value="registerCheckbox02"><br>
+	</form><br>
+
+	<p>11) 폼 체크박스 요소값을 문자열 요소를 가진 리스트 컬렉션 타입 매개변수로 처리한다.</p>
+	<form action="/registerCheckbox03" method="post">
+		hoddy : <br>
+		<input type="checkbox" name="hobbyArray" value="sports">Sports<br>
+		<input type="checkbox" name="hobbyArray" value="music">Music<br>
+		<input type="checkbox" name="hobbyArray" value="movie">Movie<br>
+		<input type="submit" value="registerCheckbox03"><br>
+	</form><br>
+	
+	<p>12) 폼 체크박스 요소값을 기본 데이터 타입인 문자열 타입 매개변수로 처리한다.</p>
+	<form action="/registerCheckbox04" method="post">
+		developer : <br>
+		<input type="checkbox" name="developer" value="Y"><br>
+		<input type="submit" value="registerCheckbox04"><br>
+	</form><br>
+	
+	<p>13) 폼 체크박스 요소값을 기본 데이터 타입인 불리인 타입 매개변수로 처리한다.</p>
+	<form action="/registerCheckbox05" method="post">
+		foreigner : <br>
+		<input type="checkbox" name="foreigner" value="true"><br>
+		<input type="submit" value="registerCheckbox05"><br>
+	</form><br>
+	
+	<p>14) 폼 텍스트 필드 요소값을 자바빈즈 매개변수로 처리한다.</p>
+	<form action="/registerAddress" method="post">
+		postCode : <input type="text" name="postCode"><br>
+		location : <input type="text" name="location"><br>
+		<input type="submit" value="registerAddress"><br>
+	</form><br>
+
+	<p>15) 폼 텍스트 필드 요소값을 중첩된 자바빈즈 매개변수로 처리한다.</p>
+	<form action="/registerUserAddress" method="post">
+		postCode : <input type="text" name="address.postCode"><br>
+		location : <input type="text" name="address.location"><br>
+		<input type="submit" value="registerUserAddress"><br>
+	</form><br>
+
+	<p>16) 폼 텍스트 필드 요소값을 중첩된 자바빈즈 매개변수로 처리한다.</p>
+	<form action="/registerUserCardList" method="post">
+		카드1 - 번호 : <input type="text" name="cardList[0].no"><br>
+		카드1 - 유효년월 : <input type="text" name="cardList[0].vaildMonth"><br>
+		카드2 - 번호 : <input type="text" name="cardList[1].no"><br>
+		카드2 - 유효년월 : <input type="text" name="cardList[1].vaildMonth"><br>
+		<input type="submit" value="registerUserCardList"><br>
+	</form><br>
+	
+	<p>17) 폼 텍스트 영역 요소값을 기본 데이터 타입인 문자열 타입 매개변수로 처리한다.</p>
+	<form action="/registerTextArea" method="post">
+		introduction : <br>
+		<textarea name="introduction" rows="6" cols="50"></textarea><br>
+		<input type="submit" value="registerTextArea"><br>
+	</form><br>
+
+	<p>18) 폼 텍스트 영역 요소값을 Date 타입 매개변수로 처리한다. </p>
+	<form action="/registerDate01" method="post">
+		dataOfBirth : <br>
+		<input type="text" name="dataOfBirth"><br>
+		<input type="submit" value="registerDate01"><br>
+	</form><br>
+	
+	<h3>8. 파일업로드 폼 방식 요청 처리</h3>
+	<hr/>
+	
+	<p>1) 파일업로드 폼 파일 요소값으 스픵 MVC가 지원하는 MultipartFile</p>
+	<form action="/registerFile01" method="post" enctype="multipart/form-data">
+		<input type="file" name="picture">
+		<input type="submit" value="업로드">
+	</form>
+	
+	<p>2) 파일업로드 폼 파일 요소값과 텍스트 피드 요소값을 MultipartFile 매개변수와 문자열 매개변수로 처리한다.</p>
+	<form action="/registerFile02" method="post" enctype="multipart/form-data">
+		userId : <input type="text" name="userId" value="hongkd"> <br>
+		password : <input type="text" name="password" value="1324"> <br>
+		<input type="file" name="picture">
+		<input type="submit">		
+	</form><br>
+	
+	<p>3) 파일업로드 폼 파일 요소값과 텍스트 필드 요소값을 MultipartFile 매개변수와 자바빈즈 매개변수로 처리한다. </p>
+	<form action="/registerFile03" method="post" enctype="multipart/form-data">
+		userId : <input type="text" name="userId" value="hongkd"> <br>
+		password : <input type="text" name="password" value="1324"> <br>
+		<input type="file" name="picture">
+		<input type="submit" value="업로드">		
+	</form><br>	
+	
+	<p>4) 파일업로드 폼 파일 요소값과 텍스트 필드 요소값을 FileMember 타입의 자바빈즈 매개변수로 처리한다.</p>
+	<form action="/registerFile04" method="post" enctype="multipart/form-data">
+		userId : <input type="text" name="userId" value="hongkd"> <br>
+		password : <input type="text" name="password" value="1324"> <br>
+		<input type="file" name="picture">
+		<input type="submit" value="업로드">		
+	</form><br>
+	
+	<p>5) 여러 개의 파일업로드를 폼 파일 요소값으 여러 개의 MultipartFile 매개변수로 처리한다.</p>
+	<form action="/registerFile05" method="post" enctype="multipart/form-data">
+		userId : <input type="text" name="userId" value="hongkd"> <br>
+		password : <input type="text" name="password" value="1324"> <br>
+		<input type="file" name="picture">
+		<input type="file" name="picture2">
+		<input type="submit" value="업로드">		
+	</form><br>	
+	
+	<p>6) 여러 개의 파일업로드 폼 파일 요소값을 MultipartFile 타입의 요소를 가진 리스트 커렉션 타입 매개변수로 처리한다.</p>
+	<form action="/registerFile06" method="post" enctype="multipart/form-data">
+		userId : <input type="text" name="userId" value="hongkd"> <br>
+		password : <input type="text" name="password" value="1324"> <br>
+		<input type="file" name="pictureList[0]">
+		<input type="file" name="pictureList[1]">
+		<input type="submit" value="업로드">		
+	</form><br>	
+	
+	<p>7) 여러개의 파일어보드 폼 파일 요소값과 텍스트 필드 요소값을 MultiFileMember 타입의 자바빈스 매개변수로 처리한다.</p>
+	<form action="/registerFile07" method="post" enctype="multipart/form-data">
+		userId : <input type="text" name="userId" value="hongkd"> <br>
+		password : <input type="text" name="password" value="1324"> <br>
+		<input type="file" name="pictureList[0]">
+		<input type="file" name="pictureList[1]">
+		<input type="submit" value="업로드">		
+	</form><br>	
+
+	<p>7) 번과 동일한 URL로 요청 진행</p>  
+	<form action="/registerFile07" method="post" enctype="multipart/form-data">
+		userId : <input type="text" name="userId" value="hongkd"> <br>
+		password : <input type="text" name="password" value="1324"> <br>
+		<input type="file" name="pictureList" multiple="multiple">
+		<input type="submit" value="업로드">		
+	</form><br>	
+	
+	<p>8) 파일업로드 폼 파일 요소값과 텍스트 필드 요소값을 MultipartFile 타입의 배열 매개변수로 처리한다.</p>
+	<form action="/registerFile08" method="post" enctype="multipart/form-data">
+		userId : <input type="text" name="userId" value="hongkd"> <br>
+		password : <input type="text" name="password" value="1324"> <br>
+		<input type="file" name="pictureList" multiple="multiple">
+		<input type="submit" value="업로드">		
+	</form><br>	
+	
 </body>
 </html>
