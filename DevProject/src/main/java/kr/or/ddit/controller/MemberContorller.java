@@ -443,7 +443,7 @@ public class MemberContorller {
 			for(int i = 0; i < cardList.size(); i++) {
 				Card card = cardList.get(i);
 				log.info("card.getNo() : " + card.getNo());
-				log.info("card.getValidMonth : " + card.getVaildMonth());
+				log.info("card.getValidMonth : " + card.getValidMonth());
 			}
 		}else {
 			log.info("cardList is null");
@@ -572,7 +572,7 @@ public class MemberContorller {
 		if(member.getCardList() != null) {
 			for(Card card : member.getCardList()) {
 				log.info("cardNo : "+ card.getNo());
-				log.info("cardVaildMonth : "+ card.getVaildMonth());
+				log.info("cardVaildMonth : "+ card.getValidMonth());
 			}			
 		}
 		
@@ -676,7 +676,7 @@ public class MemberContorller {
 		return "success";
 	}
 	
-	// 7) 여러개의 파일업로드 폼 파이 요소값과 텍스트 필드 요소값을 MultiFileMember 타입의 자바빈즈 매개변수로 처리한다.
+	// 7) 여러개의 파일업로드 폼 파일 요소값과 텍스트 필드 요소값을 MultiFileMember 타입의 자바빈즈 매개변수로 처리한다.
 	@RequestMapping(value = "/registerFile07" , method = RequestMethod.POST)
 	public String registerFile07(MultiFileMember multiFileMember) {
 		log.info("registerFile07() 실행...!");
