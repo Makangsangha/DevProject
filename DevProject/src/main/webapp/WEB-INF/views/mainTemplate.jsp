@@ -32,7 +32,7 @@
 </c:if>
 <body class="hold-transition sidebar-mini">
 	<div class="wrapper">
-	<tiles:insertAttribute name="header"/>
+		<tiles:insertAttribute name="header"/>
 	
 		<div class="content-wrapper">
 			<tiles:insertAttribute name="content"/>		
@@ -42,10 +42,13 @@
 		<aside class="control-sidebar control-sidebar-dark">
      	</aside>
 	</div>
-	
-	<script
-		src="${pageContext.request.contextPath }/resources/plugins/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-	<script
-		src="${pageContext.request.contextPath }/resources/plugins/dist/js/adminlte.min.js"></script>
+	<script src="${pageContext.request.contextPath }/resources/plugins/bs-custom-file-input/bs-custom-file-input.min.js"></script>
+	<script src="${pageContext.request.contextPath }/resources/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+	<script src="${pageContext.request.contextPath }/resources/plugins/dist/js/adminlte.min.js"></script>
+	<script type="text/javascript">
+	$(function(){
+		bsCustomFileInput.init();	// 부트스트랩 openFile 이벤트 설정
+	});
+	</script>
 </body>
 </html>

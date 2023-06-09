@@ -1,4 +1,4 @@
-package kr.or.ddit.file.item01.service;
+package kr.or.ddit.controller.file.item01.service;
 
 import java.util.List;
 

@@ -34,7 +34,7 @@ public class DatabaseConnectController {
 	 * 
 	 * 		** 우리는 마이바티스를 이용한 CRUD 게시판을 진행하도록 합니다.
 	 * 
-	 * 		1) Oracle Database에서 운용할 계정으 생성한다.
+	 * 		1) Oracle Database에서 운용할 계정을 생성한다.
 	 * 		2) 생성 SQL을 통해 관련 테이블을 생성한다.
 	 * 		3) 게시판 작성을 위한 페이지(기본화면)
 	 * 			- 등록화면
@@ -45,7 +45,7 @@ public class DatabaseConnectController {
 	 * 			- 수정 처리 후 화면
 	 * 			- 삭제 처리 후 화면
 	 * 
-	 * 5. 스픵 JDBC
+	 * 5. 스프링 JDBC
 	 * 	- SQL로만 데이터베이스를 쉽게 처리할 수 있도록 도와주는 JDBCTemplate 클래스를 제공한다.
 	 * 
 	 * 		1. JDBCTemplate 클래스가 제공하는 주요 메소드
@@ -89,7 +89,7 @@ public class DatabaseConnectController {
 	 *		
 	 *	# Entity
 	 *	- 데이터베이스에서 지속적으로 저장된 데이터를 자바 객체에 매핑한 것이다.
-	 *	- 메모리 상에 자바 객체의 인스턴스 형태로 존재하면 EntityManager에 의해 데이터베이스의 데이터와 동기화한다.
+	 *	- 메모리 상에 자바 객체의 인스턴스 형태로 존재하면 ㅅ,
 	 *
 	 *  # EntityManager
 	 *  - 필요에 따라 Entity와 데이터베이스의 데이터를 동기화한다.

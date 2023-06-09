@@ -11,6 +11,12 @@
 	<definition name="notice/*" extends="mainTemplate">
 		<put-attribute name="content" value="/WEB-INF/views/noticeboard/{1}.jsp"></put-attribute>
 	</definition>
+
+	<definition name="loginTemplate" template="/WEB-INF/views/loginTemplate.jsp"></definition>
+	
+	<definition name="conn/*" extends="loginTemplate">
+		<put-attribute name="content" value="/WEB-INF/views/noticeboard/{1}.jsp"></put-attribute>
+	</definition>
 <!-- 	<definition name="*/*" extends="mainTemplate"> -->
 <!-- 		<put-attribute name="content" value="/WEB-INF/views/noticeboard/{1}/{2}.jsp"></put-attribute> -->
 <!-- 	</definition> -->
