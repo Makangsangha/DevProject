@@ -1,17 +1,20 @@
 package kr.or.ddit.controller.board;
 
+import java.io.IOException;
 import java.util.List;
 
+import javax.annotation.PostConstruct;
 import javax.inject.Inject;
 
+import org.springframework.aop.support.AopUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import kr.or.ddit.service.IBoardService;
 import kr.or.ddit.vo.Board;
-import kr.or.ddit.vo.MemberVO;
 import lombok.extern.slf4j.Slf4j;
 
 @Controller
@@ -22,6 +25,13 @@ public class CrudBoardController {
 	@Inject
 	private IBoardService service;
 	
+	// 빈이 등록되고 초기화 단계에서 바로 확인할 때 사용
+	@PostConstruct
+	public void init() {
+		log.info("aopProxy 상태(interface 기반) : {} " + AopUtils.isAopProxy(service));
+		log.info("aopProxy 상태(class 기반) : {} " + AopUtils.isCglibProxy(service));
+	}
+	
 	@RequestMapping(value = "/register", method = RequestMethod.GET)
 	public String crudRegisterForm(Model model) {
 		log.info("crudRegisterForm() 실행...!");
@@ -30,9 +40,14 @@ public class CrudBoardController {
 	}
 	
 	@RequestMapping(value="/register", method = RequestMethod.POST)
-	public String crudRegister(Board board, Model model) {
+	public String crudRegister(@Validated Board board, Model model) {
 		log.info("crudRegister() 실행...!");
-		service.register(board);
+		try {
+			service.register(board);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		model.addAttribute("msg", "등록이 완료되었습니다!");
 		return "crud/success";
 	}

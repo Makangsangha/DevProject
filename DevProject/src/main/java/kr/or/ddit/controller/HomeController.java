@@ -1,4 +1,4 @@
-package kr.or.ddit;
+package kr.or.ddit.controller;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -51,7 +51,8 @@ public class HomeController {
 		
 		model.addAttribute("serverTime", formattedDate );
 		
-		return "home";
+//		return "home";
+		return "redirect:/notice/list.do";
 	}
 	
 	/*
